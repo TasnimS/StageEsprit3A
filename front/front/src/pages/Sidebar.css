@@ -1,0 +1,164 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: width 0.3s ease;
+  box-shadow: 2px 0 8px rgba(255, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+  padding: 0.5rem;
+}
+
+/* Styles spécifiques pour le logo */
+.logo-esprit {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebar.collapsed .logo-esprit {
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar-header {
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  margin-bottom: 15px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  color: white;
+}
+
+.highlight {
+  color: #ff0000;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nav-top {
+  flex: 1;
+}
+
+.nav-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.sidebar-link:hover {
+  background-color: #2a2a2a;
+  color: red;
+}
+
+.sidebar-link.active {
+  background-color: red;
+  color: white;
+}
+
+.sidebar-icon {
+  font-size: 18px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #2a2a2a;
+  color: red;
+}
+
+.sidebar-profile {
+  padding: 1rem 0;
+  border-top: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid red;
+}
+
+.profile-name {
+  font-size: 0.9rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+@media (max-height: 500px) {
+  .sidebar-profile {
+    display: none;
+  }
+}
+
+/* Style spécifique pour le mode collapsed */
+.sidebar.collapsed .profile-name,
+.sidebar.collapsed .sidebar-link span {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-link {
+  justify-content: center;
+  padding: 10px;
+}
+
+.sidebar.collapsed .sidebar-profile {
+  padding: 0.5rem 0;
+}
